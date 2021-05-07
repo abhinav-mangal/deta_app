@@ -1,4 +1,5 @@
 import 'package:deta_app/Pages/Drawer.dart';
+import 'package:deta_app/Pages/loginPage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -46,7 +47,12 @@ class _HomePageState extends State<HomePage> {
                           style: ButtonStyle(
                               backgroundColor: MaterialStateProperty.all(
                                   Colors.black.withOpacity(0.6))),
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => LoginPage()));
+                          },
                           child: Text(
                             'Login',
                             style: TextStyle(fontSize: 20, color: Colors.white),

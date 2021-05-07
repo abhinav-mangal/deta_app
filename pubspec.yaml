@@ -35,10 +35,12 @@ dev_dependencies:
   flutter_native_splash:
 
 flutter_native_splash:
-  color: #000000
+  color: "#000000"
   image: assets/Splash.png
   adroid: true
   ios: true
+  android_gravity: fill
+  ios_content_mode: scaleAspectFill
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

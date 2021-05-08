@@ -24,7 +24,6 @@ class _LoginPageState extends State<LoginPage> {
             child: SingleChildScrollView(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
-                // crossAxisAlign111ment: CrossAxisAlignment.stretch,
                 children: [
                   SizedBox(
                     height: 400,

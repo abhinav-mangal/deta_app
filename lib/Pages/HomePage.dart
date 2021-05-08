@@ -1,5 +1,6 @@
 import 'package:deta_app/Models/Appbar.dart';
 import 'package:deta_app/Models/Drawer.dart';
+import 'package:deta_app/Pages/GuestPage/GuestPage.dart';
 import 'package:deta_app/Pages/loginPage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -63,7 +64,12 @@ class _HomePageState extends State<HomePage> {
                           style: ButtonStyle(
                               backgroundColor: MaterialStateProperty.all(
                                   Colors.black.withOpacity(0.6))),
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => GuestPage()));
+                          },
                           child: Text(
                             'Guest',
                             style: TextStyle(fontSize: 20, color: Colors.white),

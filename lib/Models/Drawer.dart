@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import 'HomePage.dart';
+import '../Pages/HomePage.dart';
 
 class SideDrawer extends StatelessWidget {
   @override

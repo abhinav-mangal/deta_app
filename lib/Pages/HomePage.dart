@@ -1,4 +1,5 @@
-import 'package:deta_app/Pages/Drawer.dart';
+import 'package:deta_app/Models/Appbar.dart';
+import 'package:deta_app/Models/Drawer.dart';
 import 'package:deta_app/Pages/loginPage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -13,16 +14,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
         drawer: SideDrawer(),
-        appBar: AppBar(
-          backgroundColor: Colors.indigo[900],
-          centerTitle: true,
-          title: Container(
-              color: Colors.black,
-              child: Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: Text('DETA'),
-              )),
-        ),
+        appBar: FixedBar(),
         body: Container(
           constraints: BoxConstraints.expand(),
           decoration: BoxDecoration(

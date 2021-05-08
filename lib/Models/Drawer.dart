@@ -1,3 +1,4 @@
+import 'package:deta_app/Pages/DrawerPages/HelpPage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -78,7 +79,10 @@ class SideDrawer extends StatelessWidget {
               Icons.arrow_forward_ios_rounded,
               color: Colors.white,
             ),
-            onTap: () {},
+            onTap: () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => HelpPage()));
+            },
           ),
           Divider(
             color: Colors.white,

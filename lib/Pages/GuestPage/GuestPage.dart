@@ -1,5 +1,6 @@
 import 'package:deta_app/Models/Appbar.dart';
 import 'package:deta_app/Models/Drawer.dart';
+import 'package:deta_app/Pages/GuestPage/ExeComPage.dart';
 import 'package:deta_app/Pages/GuestPage/MembersPage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -54,7 +55,10 @@ class _GuestPageState extends State<GuestPage> {
               ),
             ),
             GestureDetector(
-              onTap: () {},
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => ExeComPage()));
+              },
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Container(

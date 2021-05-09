@@ -14,7 +14,6 @@ class MyApp extends StatelessWidget {
       title: 'DETA',
       theme: ThemeData(
         primarySwatch: Colors.blue,
-        canvasColor: Colors.black,
       ),
       home: HomePage(),
     );

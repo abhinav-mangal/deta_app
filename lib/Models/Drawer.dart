@@ -1,7 +1,9 @@
+import 'package:deta_app/Pages/DrawerPages/AboutPage.dart';
 import 'package:deta_app/Pages/DrawerPages/HelpPage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
+import 'package:share/share.dart';
+import 'package:url_launcher/url_launcher.dart';
 import '../Pages/HomePage.dart';
 
 class SideDrawer extends StatelessWidget {
@@ -98,7 +100,9 @@ class SideDrawer extends StatelessWidget {
               Icons.arrow_forward_ios_rounded,
               color: Colors.white,
             ),
-            onTap: () {},
+            onTap: () {
+              _onShare(context);
+            },
           ),
           Divider(
             color: Colors.white,
@@ -114,7 +118,9 @@ class SideDrawer extends StatelessWidget {
               Icons.arrow_forward_ios_rounded,
               color: Colors.white,
             ),
-            onTap: () {},
+            onTap: () {
+              _launchURL(url);
+            },
           ),
           Divider(
             color: Colors.white,
@@ -130,7 +136,10 @@ class SideDrawer extends StatelessWidget {
               Icons.arrow_forward_ios_rounded,
               color: Colors.white,
             ),
-            onTap: () {},
+            onTap: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => AboutPage()));
+            },
           ),
           Divider(
             color: Colors.white,
@@ -140,5 +149,23 @@ class SideDrawer extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  void _onShare(BuildContext context) {
+    final RenderBox box = context.findRenderObject();
+    final String text =
+        'Let me recommend you this application\n\nhttps://play.google.com/store/apps/details?id=com.javinindia.deta';
+    Share.share(text,
+        sharePositionOrigin: box.localToGlobal(Offset.zero) & box.size);
+  }
+
+  static const url =
+      'https://play.google.com/store/apps/details?id=com.javinindia.deta';
+  _launchURL(String url) async {
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
   }
 }
